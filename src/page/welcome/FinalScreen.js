@@ -22,17 +22,24 @@ const FinalScreen = ({ navigation }) => {
         loadData();
     }, []);
 
+    // Hàm lưu thông tin người dùng vào JSON Server
     const saveDataToJsonServer = async () => {
         try {
-            const response = await fetch('http://192.168.13.105:9999/users', {
+            // const response = await fetch('http://192.168.13.106:9999/users', {
+            const response = await fetch('http://10.33.8.133:9999/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(userData),
             });
-
-            if (response.ok) {
+    
+            if (response?.ok) {
+                const result = await response.json();
+                // Lưu ID người dùng để sau này sử dụng
+                await AsyncStorage.setItem('userId', result.id.toString());
+                // Lưu cờ đã hoàn thành các màn giới thiệu vào AsyncStorage
+                await AsyncStorage.setItem('userInfoCompleted', 'true');
                 alert('Dữ liệu đã được lưu vào database.json!');
                 navigation.replace("WorkoutOverview"); // 🔥 Chuyển hướng đến màn hình tập luyện
             } else {
@@ -43,6 +50,7 @@ const FinalScreen = ({ navigation }) => {
             alert('Không thể kết nối đến server!');
         }
     };
+    
 
     return (
         <View style={styles.container}>

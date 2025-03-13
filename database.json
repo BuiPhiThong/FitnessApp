@@ -34,20 +34,20 @@
       "height": "178",
       "weight": "75.0",
       "goal": "Xây dựng cơ bắp",
-      "exercisePreference": "Ngoài trời",
+      "exercisePreference": "Trên thảm",
       "exerciseFrequency": null,
       "fitnessLevel": "Trung bình",
-      "reward": "Mua một món quà đặc biệt",
+      "reward": "Mua quần áo mới",
       "id": 4
     },
     {
-      "gender": "Male",
+      "gender": "Female",
       "height": "178",
       "weight": "75.0",
       "goal": "Xây dựng cơ bắp",
-      "exercisePreference": "Trên giường",
+      "exercisePreference": "Ngoài trời",
       "exerciseFrequency": null,
-      "fitnessLevel": "Người bắt đầu",
+      "fitnessLevel": "Trung bình",
       "reward": "Thưởng thức bữa ăn ngon",
       "id": 5
     },
@@ -56,11 +56,55 @@
       "height": "178",
       "weight": "75.0",
       "goal": "Xây dựng cơ bắp",
-      "exercisePreference": "Trên giường",
+      "exercisePreference": "Trên thảm",
       "exerciseFrequency": null,
-      "fitnessLevel": "Trung bình",
+      "fitnessLevel": "Người bắt đầu",
       "reward": "Thưởng thức bữa ăn ngon",
       "id": 6
+    },
+    {
+      "gender": "Female",
+      "height": "178",
+      "weight": "75.0",
+      "goal": "Giảm cân",
+      "exercisePreference": "Trên giường",
+      "exerciseFrequency": null,
+      "fitnessLevel": "Người bắt đầu",
+      "reward": "Thưởng thức bữa ăn ngon",
+      "id": 7
+    },
+    {
+      "gender": "Female",
+      "height": "178",
+      "weight": "75.0",
+      "goal": "Giảm cân",
+      "exercisePreference": "Trên giường",
+      "exerciseFrequency": null,
+      "fitnessLevel": "Người bắt đầu",
+      "reward": "Thưởng thức bữa ăn ngon",
+      "id": 8
+    },
+    {
+      "gender": "Female",
+      "height": "178",
+      "weight": "75.0",
+      "goal": "Giữ dáng",
+      "exercisePreference": "Ngoài trời",
+      "exerciseFrequency": null,
+      "fitnessLevel": "Trung bình",
+      "reward": "Mua một món quà đặc biệt",
+      "id": 9
+    },
+    {
+      "gender": "Female",
+      "height": "178",
+      "weight": "75.0",
+      "goal": "Giảm cân",
+      "exercisePreference": "Trên giường",
+      "exerciseFrequency": null,
+      "fitnessLevel": "Người bắt đầu",
+      "reward": "Mua một món quà đặc biệt",
+      "id": 10
     }
   ],
   "workouts": [
@@ -74,12 +118,14 @@
         {
           "exerciseId": 1,
           "sets": 3,
-          "reps": 10
+          "reps": 10,
+          "completed": true
         },
         {
           "exerciseId": 2,
           "sets": 3,
-          "reps": 12
+          "reps": 12,
+          "completed": true
         }
       ],
       "notes": "Tập trung vào kỹ thuật và sức bền."
@@ -94,12 +140,14 @@
         {
           "exerciseId": 3,
           "sets": 4,
-          "reps": 8
+          "reps": 8,
+          "completed": true
         },
         {
           "exerciseId": 4,
           "sets": 4,
-          "reps": 10
+          "reps": 10,
+          "completed": true
         }
       ],
       "notes": "Tăng cường cơ bắp mà không cần thiết bị."
@@ -113,8 +161,8 @@
       "description": "Bài tập cơ bản cho phần trên cơ thể, giúp tăng cường sức mạnh cho ngực, tay và cơ bụng.",
       "instructions": "1. Nằm sấp, đặt tay rộng ngang vai. 2. Hạ thân người xuống cho đến khi ngực gần chạm đất. 3. Đẩy người lên về vị trí ban đầu.",
       "imageURLs": [
-        "https://example.com/images/pushup1.jpg",
-        "https://example.com/images/pushup2.jpg"
+        "https://www.shutterstock.com/image-photo/athletic-young-woman-home-on-260nw-2540237193.jpg",
+        "https://thethaominhphu.com/wp-content/uploads/2017/06/hit-dat-xoay-3.jpg"
       ]
     },
     {
@@ -124,8 +172,8 @@
       "description": "Bài tập cho phần dưới cơ thể, chủ yếu cho chân, giúp tăng cường sức mạnh và sự linh hoạt.",
       "instructions": "1. Đứng thẳng với chân rộng bằng vai. 2. Hạ thân người xuống như ngồi xuống ghế, giữ lưng thẳng. 3. Đẩy mông và đùi lên để đứng lại.",
       "imageURLs": [
-        "https://example.com/images/squat1.jpg",
-        "https://example.com/images/squat2.jpg"
+        "https://www.shutterstock.com/image-photo/sports-woman-fashion-black-sport-260nw-2161343727.jpg",
+        "https://www.shutterstock.com/image-vector/man-doing-medicine-ball-squat-260nw-2190118501.jpg"
       ]
     },
     {
@@ -135,8 +183,8 @@
       "description": "Bài tập giúp tác động vào nhiều nhóm cơ, đặc biệt là lưng, chân và cơ bụng.",
       "instructions": "1. Đứng thẳng, chân rộng bằng vai. 2. Uốn cong hông và đầu gối để hạ người xuống, giữ lưng thẳng. 3. Dùng lực từ chân và hông để đứng lên lại.",
       "imageURLs": [
-        "https://example.com/images/deadlift1.jpg",
-        "https://example.com/images/deadlift2.jpg"
+        "https://file.hstatic.net/1000185761/file/huong-dan-tap-deadlift-dung-cach_1f683593022041368088302ab3e8896f.jpg",
+        "https://okachi.vn/data/upload/Deadlift-la-gi.jpg"
       ]
     },
     {
@@ -146,8 +194,8 @@
       "description": "Bài tập phát triển cơ chân và cơ mông, giúp cải thiện sự cân bằng.",
       "instructions": "1. Bước một chân ra phía trước và hạ hông xuống. 2. Đảm bảo đầu gối không vượt quá mũi chân. 3. Đẩy cơ thể về lại vị trí ban đầu và thay đổi chân.",
       "imageURLs": [
-        "https://example.com/images/lunges1.jpg",
-        "https://example.com/images/lunges2.jpg"
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzsPX9H1NwZcqL7_OcfGrUAJhYPOAxe79F-g&s",
+        "https://phcn-online.com/wp-content/uploads/2021/04/Lunge-la-gi.jpg"
       ]
     },
     {
@@ -157,8 +205,8 @@
       "description": "Bài tập giúp phát triển cơ bụng, vai và cơ lưng.",
       "instructions": "1. Nằm sấp, chống khuỷu tay xuống sàn. 2. Giữ cơ thể thẳng từ đầu đến chân. 3. Giữ tư thế plank trong thời gian nhất định.",
       "imageURLs": [
-        "https://example.com/images/plank1.jpg",
-        "https://example.com/images/plank2.jpg"
+        "https://cali.vn/storage/app/media/Editors/626bb0a84a8a5tu-the-plank-chuan-2.jpg",
+        "https://yamaguchi.com.vn/media/news/1801_plank-dong-tac-the-hinh-noi-tieng-duoc-rat-nhieu-nguoi-yeu-thich.png"
       ]
     },
     {
@@ -168,8 +216,8 @@
       "description": "Bài tập thể dục cardio giúp đốt cháy mỡ và tăng sức bền.",
       "instructions": "1. Vào tư thế hít đất, thân người thẳng. 2. Bước một chân lên phía trước gần ngực, sau đó đổi chân nhanh chóng như thể leo núi.",
       "imageURLs": [
-        "https://example.com/images/mountainclimbers1.jpg",
-        "https://example.com/images/mountainclimbers2.jpg"
+        "https://cdn.nhathuoclongchau.com.vn/unsafe/800x0/https://cms-prod.s3-sgn09.fptcloud.com/mountain_climbers_3_622e7fcc0a.jpg",
+        "https://nuedu.vn/cdn/upload/images/moutain-climbers-5(1).jpg"
       ]
     },
     {
@@ -179,8 +227,8 @@
       "description": "Bài tập giúp phát triển cơ bụng và cơ chéo.",
       "instructions": "1. Ngồi xuống sàn, giữ lưng thẳng và co đầu gối. 2. Xoay thân người sang trái, sau đó sang phải. 3. Lặp lại động tác.",
       "imageURLs": [
-        "https://example.com/images/russiantwist1.jpg",
-        "https://example.com/images/russiantwist2.jpg"
+        "https://t3.ftcdn.net/jpg/02/62/56/28/360_F_262562893_FRyE74UesGLF5qVDLzVcU13obDhUBzbH.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjV3h16Gkdram-6ZFULsSVdaUKLXQKfKNULA&s"
       ]
     }
   ],
@@ -207,6 +255,18 @@
       "exerciseId": 1,
       "sets": 3,
       "reps": 10
+    },
+    {
+      "levelId": 1,
+      "exerciseId": 2,
+      "sets": 3,
+      "reps": 12
+    },
+    {
+      "levelId": 1,
+      "exerciseId": 2,
+      "sets": 3,
+      "reps": 12
     },
     {
       "levelId": 1,
