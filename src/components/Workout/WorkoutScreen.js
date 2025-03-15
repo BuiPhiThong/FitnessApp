@@ -1,23 +1,51 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, TouchableOpacity, FlatList, Image, StyleSheet, ActivityIndicator } from 'react-native';
 import { useWorkoutData } from '../../service/WorkoutService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import FontAwesome from 'react-native-vector-icons/FontAwesome'; // Import FontAwesome for icons
 
 const WorkoutOverviewScreen = ({ navigation }) => {
     const { workouts, loading, error } = useWorkoutData();
 
-    // Hàm đặt lại thông tin người dùng
+    // Disable the back swipe gesture on this screen
+    useEffect(() => {
+        navigation.setOptions({
+            headerLeft: null,  // This will remove the back button
+            gestureEnabled: false,  // Disable swipe gesture to go back
+        });
+    }, [navigation]);
+
+    const isWorkoutCompleted = (workout) => {
+        return workout.exercises.every(exercise => exercise.completed);
+    };
+
     const handleReset = async () => {
         try {
             await AsyncStorage.removeItem('userInfoCompleted');
-            // Xóa các thông tin khác nếu cần
+            const response = await fetch('http://192.168.0.100:9999/workouts');
+            const workouts = await response.json();
+            for (const workout of workouts) {
+                const updatedExercises = workout.exercises.map(exercise => ({
+                    ...exercise,
+                    completed: false
+                }));
+                await fetch(`http://192.168.0.100:9999/workouts/${workout.id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        ...workout,
+                        exercises: updatedExercises
+                    }),
+                });
+            }
             navigation.replace('WelcomeScreen');
         } catch (error) {
             console.error('Lỗi khi đặt lại thông tin:', error);
         }
     };
 
-    // Kiểm tra nếu dữ liệu chưa sẵn sàng
     if (loading) {
         return (
             <View style={styles.loaderContainer}>
@@ -27,7 +55,6 @@ const WorkoutOverviewScreen = ({ navigation }) => {
         );
     }
 
-    // Kiểm tra nếu có lỗi
     if (error) {
         return (
             <View style={styles.container}>
@@ -37,7 +64,6 @@ const WorkoutOverviewScreen = ({ navigation }) => {
         );
     }
 
-    // Nếu không có dữ liệu
     if (!workouts || workouts.length === 0) {
         return (
             <View style={styles.container}>
@@ -50,38 +76,59 @@ const WorkoutOverviewScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.header}>🔥 CƠ BẮP VÙNG TRÊN MẠNH MẼ 🔥</Text>
-            {/* <Text style={styles.subHeader}>4 Tuần • 0% Hoàn thành</Text> */}
 
             <FlatList
                 data={workouts}
-                keyExtractor={(item) => item.id?.toString() || Math.random().toString()} // Tránh lỗi key null
+                keyExtractor={(item) => item.id?.toString() || Math.random().toString()}
                 renderItem={({ item }) => (
-                  <TouchableOpacity
-                  style={styles.dayItem}
-                  onPress={() => navigation.navigate("WorkoutDetail", { selectedWorkout: item })}
-                >
-                  <Image 
-                    source={{ uri: item.exercises?.[0]?.imageURLs?.[0] || 'https://example.com/default.jpg' }} 
-                    style={styles.dayImage} 
-                  />
-                  <View>
-                    <Text style={styles.dayText}>{item.name || "Không có tiêu đề"}</Text>
-                    <Text style={styles.daySubText}>{item.duration || "Không rõ thời gian"} • {item.exercises?.length || 0} bài tập</Text>
-                  </View>
-                </TouchableOpacity>
-                
+                    <TouchableOpacity
+                        style={styles.dayItem}
+                        onPress={() => navigation.navigate("WorkoutDetail", { selectedWorkout: item })}
+                    >
+                        <Image
+                            source={{ uri: item.exercises?.[0]?.imageURLs?.[0] || 'https://example.com/default.jpg' }}
+                            style={styles.dayImage}
+                        />
+                        <View>
+                            <Text style={styles.dayText}>{item.name || "Không có tiêu đề"}</Text>
+                            <Text style={styles.daySubText}>{item.duration || "Không rõ thời gian"} • {item.exercises?.length || 0} bài tập</Text>
+                        </View>
+                        {isWorkoutCompleted(item) && (
+                            <FontAwesome name="check-circle" style={styles.chuv} size={30} color="green" />
+                        )}
+                    </TouchableOpacity>
                 )}
             />
-            
+
             {/* Nút đặt lại thông tin */}
             <TouchableOpacity style={styles.resetButton} onPress={handleReset}>
                 <Text style={styles.resetButtonText}>Đặt lại thông tin</Text>
             </TouchableOpacity>
+
+            {/* Bottom Navigation Bar */}
+            <View style={styles.bottomNav}>
+                <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('WorkoutOverview')}>
+                    <FontAwesome name="clipboard" size={20} color="#333" />
+                    <Text style={styles.navText}>Kế hoạch</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.navItem} >
+                    <FontAwesome name="search" size={20} color="#333" />
+                    <Text style={styles.navText}>Khám Phá</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.navItem} >
+                    <FontAwesome name="history" size={20} color="#333" />
+                    <Text style={styles.navText}>Lịch sử</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Favorites')}>
+                    <FontAwesome name="heart" size={20} color="#333" />
+                    <Text style={styles.navText}>Yêu thích</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 };
 
-// 🎨 **Styles**
+// Styles for Bottom Navigation
 const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#fff', padding: 20 },
     loaderContainer: {
@@ -96,7 +143,6 @@ const styles = StyleSheet.create({
     dayImage: { width: 60, height: 60, borderRadius: 10, marginRight: 10 },
     dayText: { fontSize: 16, fontWeight: 'bold' },
     daySubText: { fontSize: 12, color: 'gray' },
-    // Style cho nút đặt lại thông tin
     resetButton: {
         backgroundColor: '#ff5252',
         paddingVertical: 12,
@@ -110,6 +156,23 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         textAlign: 'center',
+    },
+    // Bottom Navigation Styles
+    bottomNav: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        backgroundColor: '#fff',
+        borderTopWidth: 1,
+        borderTopColor: '#ccc',
+        paddingVertical: 10,
+    },
+    navItem: {
+        alignItems: 'center',
+    },
+    navText: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: '#333',
     },
 });
 

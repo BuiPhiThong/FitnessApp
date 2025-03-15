@@ -1,110 +1,26 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "John Doe",
-      "age": 28,
-      "weight": 75,
-      "height": 175,
+      "gender": "Female",
+      "height": "178",
+      "weight": "75.0",
       "goal": "Giảm cân",
-      "levelId": 1
-    },
-    {
-      "id": 2,
-      "name": "Jane Smith",
-      "age": 32,
-      "weight": 65,
-      "height": 160,
-      "goal": "Xây dựng cơ bắp",
-      "levelId": 2
+      "exercisePreference": "Trên giường",
+      "exerciseFrequency": null,
+      "fitnessLevel": "Người bắt đầu",
+      "reward": "Thưởng thức bữa ăn ngon",
+      "id": 1
     },
     {
       "gender": "Male",
       "height": "178",
       "weight": "75.0",
-      "goal": "Xây dựng cơ bắp",
-      "exercisePreference": "Trên giường",
-      "exerciseFrequency": null,
-      "fitnessLevel": "Trung bình",
-      "reward": "Mua một món quà đặc biệt",
-      "id": 3
-    },
-    {
-      "gender": "Female",
-      "height": "178",
-      "weight": "75.0",
-      "goal": "Xây dựng cơ bắp",
-      "exercisePreference": "Trên thảm",
-      "exerciseFrequency": null,
-      "fitnessLevel": "Trung bình",
-      "reward": "Mua quần áo mới",
-      "id": 4
-    },
-    {
-      "gender": "Female",
-      "height": "178",
-      "weight": "75.0",
-      "goal": "Xây dựng cơ bắp",
-      "exercisePreference": "Ngoài trời",
-      "exerciseFrequency": null,
-      "fitnessLevel": "Trung bình",
-      "reward": "Thưởng thức bữa ăn ngon",
-      "id": 5
-    },
-    {
-      "gender": "Female",
-      "height": "178",
-      "weight": "75.0",
-      "goal": "Xây dựng cơ bắp",
-      "exercisePreference": "Trên thảm",
-      "exerciseFrequency": null,
-      "fitnessLevel": "Người bắt đầu",
-      "reward": "Thưởng thức bữa ăn ngon",
-      "id": 6
-    },
-    {
-      "gender": "Female",
-      "height": "178",
-      "weight": "75.0",
-      "goal": "Giảm cân",
-      "exercisePreference": "Trên giường",
-      "exerciseFrequency": null,
-      "fitnessLevel": "Người bắt đầu",
-      "reward": "Thưởng thức bữa ăn ngon",
-      "id": 7
-    },
-    {
-      "gender": "Female",
-      "height": "178",
-      "weight": "75.0",
-      "goal": "Giảm cân",
-      "exercisePreference": "Trên giường",
-      "exerciseFrequency": null,
-      "fitnessLevel": "Người bắt đầu",
-      "reward": "Thưởng thức bữa ăn ngon",
-      "id": 8
-    },
-    {
-      "gender": "Female",
-      "height": "178",
-      "weight": "75.0",
       "goal": "Giữ dáng",
-      "exercisePreference": "Ngoài trời",
+      "exercisePreference": "Bất kỳ nơi nào",
       "exerciseFrequency": null,
-      "fitnessLevel": "Trung bình",
+      "fitnessLevel": "Nâng cao",
       "reward": "Mua một món quà đặc biệt",
-      "id": 9
-    },
-    {
-      "gender": "Female",
-      "height": "178",
-      "weight": "75.0",
-      "goal": "Giảm cân",
-      "exercisePreference": "Trên giường",
-      "exerciseFrequency": null,
-      "fitnessLevel": "Người bắt đầu",
-      "reward": "Mua một món quà đặc biệt",
-      "id": 10
+      "id": 2
     }
   ],
   "workouts": [
@@ -119,13 +35,13 @@
           "exerciseId": 1,
           "sets": 3,
           "reps": 10,
-          "completed": true
+          "completed": false
         },
         {
           "exerciseId": 2,
           "sets": 3,
           "reps": 12,
-          "completed": true
+          "completed": false
         }
       ],
       "notes": "Tập trung vào kỹ thuật và sức bền."
@@ -141,16 +57,228 @@
           "exerciseId": 3,
           "sets": 4,
           "reps": 8,
-          "completed": true
+          "completed": false
         },
         {
           "exerciseId": 4,
           "sets": 4,
           "reps": 10,
-          "completed": true
+          "completed": false
         }
       ],
       "notes": "Tăng cường cơ bắp mà không cần thiết bị."
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "name": "Tập luyện buổi tối",
+      "date": "2025-03-01",
+      "duration": "60 phút",
+      "exercises": [
+        {
+          "exerciseId": 5,
+          "sets": 3,
+          "reps": 15,
+          "completed": false
+        },
+        {
+          "exerciseId": 6,
+          "sets": 4,
+          "reps": 20,
+          "completed": false
+        }
+      ],
+      "notes": "Tập trung vào cơ bụng và sức bền"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "name": "Tập luyện toàn thân",
+      "date": "2025-03-02",
+      "duration": "45 phút",
+      "exercises": [
+        {
+          "exerciseId": 7,
+          "sets": 3,
+          "reps": 20,
+          "completed": false
+        },
+        {
+          "exerciseId": 4,
+          "sets": 4,
+          "reps": 12,
+          "completed": false
+        }
+      ],
+      "notes": "Kết hợp các bài tập phát triển toàn thân"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "name": "Tập luyện giảm cân - Buổi sáng",
+      "date": "2025-03-03",
+      "duration": "30 phút",
+      "exercises": [
+        {
+          "exerciseId": 6,
+          "sets": 3,
+          "reps": 30,
+          "completed": false
+        },
+        {
+          "exerciseId": 2,
+          "sets": 4,
+          "reps": 20,
+          "completed": false
+        },
+        {
+          "exerciseId": 5,
+          "sets": 3,
+          "reps": 15,
+          "completed": false
+        }
+      ],
+      "notes": "Chương trình tập luyện này giúp đốt cháy mỡ thừa, kết hợp giữa cardio và bài tập cơ bụng."
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "name": "Tập luyện sức bền - Buổi chiều",
+      "date": "2025-03-04",
+      "duration": "45 phút",
+      "exercises": [
+        {
+          "exerciseId": 3,
+          "sets": 5,
+          "reps": 8,
+          "completed": false
+        },
+        {
+          "exerciseId": 4,
+          "sets": 4,
+          "reps": 12,
+          "completed": false
+        },
+        {
+          "exerciseId": 7,
+          "sets": 3,
+          "reps": 20,
+          "completed": false
+        }
+      ],
+      "notes": "Tập luyện này chủ yếu tập trung vào việc tăng sức bền với các bài tập cho cơ chân và cơ bụng."
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "name": "Tập luyện phát triển cơ bắp",
+      "date": "2025-03-05",
+      "duration": "60 phút",
+      "exercises": [
+        {
+          "exerciseId": 1,
+          "sets": 4,
+          "reps": 12,
+          "completed": false
+        },
+        {
+          "exerciseId": 3,
+          "sets": 5,
+          "reps": 6,
+          "completed": false
+        },
+        {
+          "exerciseId": 2,
+          "sets": 4,
+          "reps": 10,
+          "completed": false
+        }
+      ],
+      "notes": "Chương trình tập luyện này tập trung vào việc phát triển cơ bắp cho phần trên cơ thể và cơ chân."
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "name": "Tập luyện toàn thân - 2",
+      "date": "2025-03-06",
+      "duration": "45 phút",
+      "exercises": [
+        {
+          "exerciseId": 5,
+          "sets": 3,
+          "reps": 20,
+          "completed": false
+        },
+        {
+          "exerciseId": 6,
+          "sets": 4,
+          "reps": 20,
+          "completed": false
+        },
+        {
+          "exerciseId": 7,
+          "sets": 3,
+          "reps": 15,
+          "completed": false
+        }
+      ],
+      "notes": "Chương trình tập luyện toàn thân với các bài tập không cần thiết bị, dành cho người mới bắt đầu."
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "name": "Tập luyện cường độ cao (HIIT)",
+      "date": "2025-03-07",
+      "duration": "30 phút",
+      "exercises": [
+        {
+          "exerciseId": 6,
+          "sets": 5,
+          "reps": 30,
+          "completed": false
+        },
+        {
+          "exerciseId": 4,
+          "sets": 4,
+          "reps": 20,
+          "completed": false
+        },
+        {
+          "exerciseId": 5,
+          "sets": 4,
+          "reps": 15,
+          "completed": false
+        }
+      ],
+      "notes": "Tập luyện cường độ cao, kết hợp cardio và bài tập cơ bụng để đốt cháy calo nhanh chóng."
+    },
+    {
+      "id": 10,
+      "userId": 2,
+      "name": "Tập luyện tăng cường cơ mông và chân",
+      "date": "2025-03-08",
+      "duration": "45 phút",
+      "exercises": [
+        {
+          "exerciseId": 2,
+          "sets": 4,
+          "reps": 15,
+          "completed": false
+        },
+        {
+          "exerciseId": 4,
+          "sets": 4,
+          "reps": 12,
+          "completed": false
+        },
+        {
+          "exerciseId": 7,
+          "sets": 3,
+          "reps": 20,
+          "completed": false
+        }
+      ],
+      "notes": "Chương trình tập luyện tập trung vào việc phát triển cơ mông và chân, cải thiện sức mạnh và sự linh hoạt."
     }
   ],
   "exercises": [
@@ -158,6 +286,7 @@
       "id": 1,
       "name": "Hít đất",
       "type": "Bodyweight",
+      "category": "Cơ bắp",
       "description": "Bài tập cơ bản cho phần trên cơ thể, giúp tăng cường sức mạnh cho ngực, tay và cơ bụng.",
       "instructions": "1. Nằm sấp, đặt tay rộng ngang vai. 2. Hạ thân người xuống cho đến khi ngực gần chạm đất. 3. Đẩy người lên về vị trí ban đầu.",
       "imageURLs": [
@@ -169,6 +298,7 @@
       "id": 2,
       "name": "Squat",
       "type": "Bodyweight",
+      "category": "Cơ bắp",
       "description": "Bài tập cho phần dưới cơ thể, chủ yếu cho chân, giúp tăng cường sức mạnh và sự linh hoạt.",
       "instructions": "1. Đứng thẳng với chân rộng bằng vai. 2. Hạ thân người xuống như ngồi xuống ghế, giữ lưng thẳng. 3. Đẩy mông và đùi lên để đứng lại.",
       "imageURLs": [
@@ -180,6 +310,7 @@
       "id": 3,
       "name": "Deadlift (Bodyweight)",
       "type": "Bodyweight",
+      "category": "Cơ bắp",
       "description": "Bài tập giúp tác động vào nhiều nhóm cơ, đặc biệt là lưng, chân và cơ bụng.",
       "instructions": "1. Đứng thẳng, chân rộng bằng vai. 2. Uốn cong hông và đầu gối để hạ người xuống, giữ lưng thẳng. 3. Dùng lực từ chân và hông để đứng lên lại.",
       "imageURLs": [
@@ -191,6 +322,7 @@
       "id": 4,
       "name": "Lunges",
       "type": "Bodyweight",
+      "category": "Sức bền",
       "description": "Bài tập phát triển cơ chân và cơ mông, giúp cải thiện sự cân bằng.",
       "instructions": "1. Bước một chân ra phía trước và hạ hông xuống. 2. Đảm bảo đầu gối không vượt quá mũi chân. 3. Đẩy cơ thể về lại vị trí ban đầu và thay đổi chân.",
       "imageURLs": [
@@ -202,6 +334,7 @@
       "id": 5,
       "name": "Plank",
       "type": "Bodyweight",
+      "category": "Giảm cân",
       "description": "Bài tập giúp phát triển cơ bụng, vai và cơ lưng.",
       "instructions": "1. Nằm sấp, chống khuỷu tay xuống sàn. 2. Giữ cơ thể thẳng từ đầu đến chân. 3. Giữ tư thế plank trong thời gian nhất định.",
       "imageURLs": [
@@ -213,6 +346,7 @@
       "id": 6,
       "name": "Mountain Climbers",
       "type": "Bodyweight",
+      "category": "Giảm cân",
       "description": "Bài tập thể dục cardio giúp đốt cháy mỡ và tăng sức bền.",
       "instructions": "1. Vào tư thế hít đất, thân người thẳng. 2. Bước một chân lên phía trước gần ngực, sau đó đổi chân nhanh chóng như thể leo núi.",
       "imageURLs": [
@@ -224,6 +358,7 @@
       "id": 7,
       "name": "Russian Twist",
       "type": "Bodyweight",
+      "category": "Cơ bắp",
       "description": "Bài tập giúp phát triển cơ bụng và cơ chéo.",
       "instructions": "1. Ngồi xuống sàn, giữ lưng thẳng và co đầu gối. 2. Xoay thân người sang trái, sau đó sang phải. 3. Lặp lại động tác.",
       "imageURLs": [
@@ -297,6 +432,24 @@
       "exerciseId": 4,
       "sets": 5,
       "reps": 8
+    },
+    {
+      "levelId": 2,
+      "exerciseId": 5,
+      "sets": 4,
+      "reps": 12
+    },
+    {
+      "levelId": 2,
+      "exerciseId": 6,
+      "sets": 5,
+      "reps": 15
+    },
+    {
+      "levelId": 3,
+      "exerciseId": 7,
+      "sets": 6,
+      "reps": 20
     }
   ]
 }

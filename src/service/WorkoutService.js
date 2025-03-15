@@ -1,6 +1,6 @@
 // src/services/WorkoutService.js
 import { useState, useEffect } from 'react';
-const API_URL = 'http://10.33.8.133:9999/workouts'; // Địa chỉ đúng của JSON Server
+const API_URL = 'http://192.168.0.100:9999/workouts'; // Địa chỉ đúng của JSON Server
 
 // Hàm lấy danh sách bài tập phù hợp cho từng user
 const getWorkoutsForUser = (user, exercises, levelExercises) => {
@@ -34,7 +34,7 @@ const assignWorkoutsToUsers = (users, exercises, levelExercises) => {
 // Hàm lưu danh sách bài tập lên json-server
 const saveWorkoutsToServer = async (workouts) => {
     try {
-        const response = await fetch('http://10.33.8.133:9999/workouts', {
+        const response = await fetch('http://192.168.0.100:9999/workouts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

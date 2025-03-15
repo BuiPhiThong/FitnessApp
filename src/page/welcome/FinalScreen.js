@@ -26,7 +26,7 @@ const FinalScreen = ({ navigation }) => {
     const saveDataToJsonServer = async () => {
         try {
             // const response = await fetch('http://192.168.13.106:9999/users', {
-            const response = await fetch('http://10.33.8.133:9999/users', {
+            const response = await fetch('http://192.168.0.100:9999/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
