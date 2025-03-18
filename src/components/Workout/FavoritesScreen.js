@@ -3,7 +3,7 @@ import { View, Text, FlatList, Image, StyleSheet, ActivityIndicator, ScrollView,
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const API_EXERCISES = 'http://192.168.0.100:9999/exercises'; // Replace with correct IP address
+const API_EXERCISES = 'http://192.168.13.105:9999/exercises'; // Replace with correct IP address
 const { width } = Dimensions.get('window');
 
 const FavoritesScreen = ({ navigation }) => {

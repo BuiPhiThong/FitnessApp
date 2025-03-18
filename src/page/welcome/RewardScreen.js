@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const RewardScreen = ({ navigation }) => {
   const saveReward = async (reward) => {
     await AsyncStorage.setItem('reward', reward);
-    navigation.navigate('FinalScreen');
+    navigation.navigate('BMICalculatorScreen'); // Navigate to BMI calculator after selecting reward
   };
 
   return (

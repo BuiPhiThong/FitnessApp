@@ -2,8 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ActivityIndicator, View } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Import Workout Context
 import WorkoutProvider from './src/context/WorkoutProvider';
@@ -19,6 +19,9 @@ import ExerciseFrequencyScreen from './src/page/welcome/ExerciseFrequencyScreen'
 import FitnessLevelScreen from './src/page/welcome/FitnessLevelScreen';
 import RewardScreen from './src/page/welcome/RewardScreen';
 import FinalScreen from './src/page/welcome/FinalScreen';
+
+// Add BMI Screen
+import BMICalculatorScreen from './src/page/welcome/BMICalculatorScreen'; // Import BMI Screen
 
 // Add Workout Screens
 import WorkoutOverviewScreen from './src/components/Workout/WorkoutScreen';
@@ -70,6 +73,10 @@ export default function App() {
           <Stack.Screen name="ExercisePreferenceScreen" component={ExercisePreferenceScreen} options={{ title: "Sở thích tập luyện" }} />
           <Stack.Screen name="ExerciseFrequencyScreen" component={ExerciseFrequencyScreen} options={{ title: "Tần suất tập luyện" }} />
           <Stack.Screen name="FitnessLevelScreen" component={FitnessLevelScreen} options={{ title: "Trình độ" }} />
+          
+          {/* New Screen for BMI */}
+          <Stack.Screen name="BMICalculatorScreen" component={BMICalculatorScreen} options={{ title: "Tính BMI" }} />
+          
           <Stack.Screen name="RewardScreen" component={RewardScreen} options={{ title: "Phần thưởng" }} />
           <Stack.Screen name="FinalScreen" component={FinalScreen} options={{ title: "Hoàn thành", headerLeft: null }} />
 

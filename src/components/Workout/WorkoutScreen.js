@@ -22,14 +22,14 @@ const WorkoutOverviewScreen = ({ navigation }) => {
     const handleReset = async () => {
         try {
             await AsyncStorage.removeItem('userInfoCompleted');
-            const response = await fetch('http://192.168.0.100:9999/workouts');
+            const response = await fetch('http://10.33.8.133:9999/workouts');
             const workouts = await response.json();
             for (const workout of workouts) {
                 const updatedExercises = workout.exercises.map(exercise => ({
                     ...exercise,
                     completed: false
                 }));
-                await fetch(`http://192.168.0.100:9999/workouts/${workout.id}`, {
+                await fetch(`http://10.33.8.133:9999/workouts/${workout.id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
